@@ -1,0 +1,18 @@
+body {
+    margin: auto;
+    width: 60em;
+}
+
+img {
+    width: 20em;
+    height: 20em;
+}
+
+.center {
+    text-align: center;
+}
+
+span.highlight {
+    background-color: yellow;
+    text-transform: uppercase;
+}

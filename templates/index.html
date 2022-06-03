@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Search Faust{% endblock %}
+{% block content %}
+    <div class="center">
+        <h1>Search Faust</h1>
+        <img src="{{ url_for('static', filename='img/fist.svg') }}" alt="A powerful fist"/>
+        <p>
+            <a href="/faust/part-one">Der Tragödie erster Teil</a>
+            <a href="/faust/part-two">Der Tragödie zweiter Teil</a>
+        </p>
+        <form id="search-form" action="/" method="get">
+            <label>Search for: <input type="text" name="searchTerm" value="{{ search_term }}"/></label>
+            <button type="submit">Search Now</button>
+        </form>
+    </div>
+    <div>
+        {% if search_results %}
+            {% for search_result in search_results %}
+                <p class="search-result">{{ search_result }}</p>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}
