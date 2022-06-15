@@ -13,7 +13,7 @@
             <button type="submit">Search Now</button>
         </form>
     </div>
-    <div>
+    <div id="search-result-container">
         {% if search_results %}
             {% for search_result in search_results %}
                 <p class="search-result">{{ search_result }}</p>

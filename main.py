@@ -15,6 +15,13 @@ def index():
         return render_template('index.html')
 
 
+@app.route('/api/search')
+def search():
+    search_term = request.args['searchTerm']
+    search_results = manager.search_paragraphs(search_term)
+    return {'searchResults': search_results}
+
+
 @app.route('/faust/part-one')
 def faust_part_one():
     paragraphs = manager.get_faust_first_part_paragraphs()
